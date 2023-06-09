@@ -6,49 +6,47 @@
 /*   By: cpopolan <cpopolan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 12:07:02 by cpopolan          #+#    #+#             */
-/*   Updated: 2023/05/04 16:17:37 by cpopolan         ###   ########.fr       */
+/*   Updated: 2023/05/29 11:04:05 by cpopolan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_stamper(t_stack *node, int size)
+void	ft_stamper(t_stack *stack, int size)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
-	printf("\n|--------------------- nodi nexter\n");
-	while(i < size)
+	ft_printf("\n|--------------------- nodi nexter\n");
+	while (i < size)
 	{
-		node = node->next;
-		printf("|--------------------↓ nexter %d, position %d\n", node->num, node->pos);
+		stack = stack->next;
 		i++;
 	}
 }
 
-void	ft_rev_stamper(t_stack *node, int size)
+void	ft_rev_stamper(t_stack *stack, int size)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
-	printf("\n|--------------------- nodi previouser\n");
-	while(i < size)
+	while (i < size)
 	{
-		node = node->prev;
-		printf("|--------------------↑ previouser %d, position %d\n", node->num, node->pos);
+		stack = stack->prev;
 		i++;
 	}
 }
 
-void	ft_final_stamper(t_stack *node, int size)
+void	ft_final_stamper(t_stack *stack, int size)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
-	while(i < size)
+	while (i < size)
 	{
-		printf("%d, %d\n", node->num, node->pos);
-		node = node->next;
+		if (!stack->next)
+			break ;
+		stack = stack->next;
 		i++;
 	}
 }
