@@ -49,7 +49,7 @@ int	*ft_optimal_b(t_stack **stack_b)
 		if (i < half)
 			optimal_b[i] = temp_b->pos - 1;
 		else if (i >= half)
-			optimal_b[i] = (temp_b->	 - *temp_b->size_b) - 1;
+			optimal_b[i] = (temp_b->pos - *temp_b->size_b) - 1;
 		temp_b = temp_b->next;
 		i++;
 	}

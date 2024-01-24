@@ -16,25 +16,22 @@ void	ft_size_over_init(t_stack **stack_a, t_stack **stack_b, int input_size)
 {
 	int	i;
 	int	a;
-
-	i = *(*stack_a)->size_a;
-	a = input_size / 3;
-	while (i > 0)
+	int n;
+	
+	n = 3;
+	a = input_size / n;
+	while(n > 1)
 	{
-		if ((*stack_a)->num > (a * 2))
-			caller_push_b(stack_a, stack_b);
-		else if ((*stack_a)->num <= (a * 2))
-			caller_rotate_a(stack_a, *(*stack_a)->size_a);
-		i--;
-	}
-	i = *(*stack_a)->size_a;
-	while (i > 0)
-	{
-		if ((*stack_a)->num >= a && (*stack_a)->num <= (a * 2))
-			caller_push_b(stack_a, stack_b);
-		else
-			caller_rotate_a(stack_a, *(*stack_a)->size_a);
-		i--;
+		i = *(*stack_a)->size_a;
+		while (i > 0)
+		{
+			if ((*stack_a)->num > (a * (n - 1)))
+				caller_push_b(stack_a, stack_b);
+			else if ((*stack_a)->num <= (a * (n - 1)))
+				caller_rotate_a(stack_a, *(*stack_a)->size_a);
+			i--;
+		}
+		n--;
 	}
 }
 

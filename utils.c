@@ -25,7 +25,7 @@ int	ft_matrix_len(char **matrix)
 	return (i);
 }
 
-int	infilabile(t_stack *stack_a, t_stack *stack_b)
+/* int	infilabile(t_stack *stack_a, t_stack *stack_b)
 {
 	int		size;
 	t_stack	*temp_a;
@@ -42,7 +42,7 @@ int	infilabile(t_stack *stack_a, t_stack *stack_b)
 		size--;
 	}
 	return (0);
-}
+} */
 
 int	find_min_pos(t_stack **stack)
 {
